@@ -1,0 +1,9 @@
+debian/.debhelper/
+debian/debhelper-build-stamp
+debian/files
+debian/subversion-hooks.debhelper.log
+debian/subversion-hooks.substvars
+debian/subversion-hooks/
+package/
+
+

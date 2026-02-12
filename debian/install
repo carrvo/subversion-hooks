@@ -1,0 +1,2 @@
+add-subversion-hooks /usr/bin/
+svn-hook /usr/src/subversion-hooks/

@@ -1,0 +1,15 @@
+Source: subversion-hooks
+Maintainer: carrvo <carrvo@gmail.com>
+Section: universe/devel
+Priority: optional
+Standards-Version: 4.6.2
+Build-Depends: debhelper-compat (= 13)
+Homepage: https://github.com/carrvo/subversion-hooks
+Vcs-Browser: https://github.com/carrvo/subversion-hooks
+Vcs-Git: https://github.com/carrvo/subversion-hooks
+
+Package: subversion-hooks
+Architecture: all
+Depends: ${misc:Depends}, subversion, bash (>= 5.2.21)
+Homepage: https://github.com/carrvo/subversion-hooks
+Description: Allows subversion to call multiple hooks!
