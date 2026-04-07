@@ -1,3 +1,9 @@
+subversion-hooks (0.0.1) UNRELEASED; urgency=medium
+
+  * fix bug #1
+
+ -- carrvo <carrvo@gmail.com>  Tue, 07 Apr 2026 16:24:36 -0600
+
 subversion-hooks (0.0.0) unstable; urgency=medium
 
   * Initial release.
