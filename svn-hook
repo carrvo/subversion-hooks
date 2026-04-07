@@ -58,7 +58,7 @@ for file in "$REPOS"/hooks/$0.d/*; do
   # Check if the item is a regular file AND has executable permission
   if [[ -f "$file" ]] && [[ -x "$file" ]]; then
     # Execute the file (the ./ is optional if the directory is in your PATH)
-    "$file" "$1" "$2" "$3" "$4" "$5" <<< "$STD_IN"
+    "$REPOS"/hooks/$0.d/"$file" "$1" "$2" "$3" "$4" "$5" <<< "$STD_IN"
     LAST_EXIT_CODE=$?
     if [ $LAST_EXIT_CODE != 0 ];
     then
