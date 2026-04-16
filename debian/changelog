@@ -1,8 +1,9 @@
-subversion-hooks (0.0.1) UNRELEASED; urgency=medium
+subversion-hooks (0.0.1) unstable; urgency=medium
 
   * fix bug #1
+  * add uninstall utility
 
- -- carrvo <carrvo@gmail.com>  Tue, 07 Apr 2026 16:24:36 -0600
+ -- carrvo <carrvo@gmail.com>  Wed, 15 Apr 2026 18:21:42 -0600
 
 subversion-hooks (0.0.0) unstable; urgency=medium
 
