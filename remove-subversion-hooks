@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# ensure:
+# 1) has a value
+# 2) ends with slash (/)
+if [[ "$1" == "" || "$1" != */ ]];
+then
+	echo "usage: $0 /path/to/svn-repo/"
+	exit 1
+fi
+
+pushd "$1" > /dev/null
+cd hooks/
+for hook in start-commit pre-commit post-commit pre-revprop-change post-revprop-change pre-lock post-lock pre-unlock post-unlock; do
+    echo uninstalling $hook in $PWD
+    if [ -d ./$hook.d/ ]; then
+        rmdir ./$hook.d/
+    fi
+    if [ -f ./$hook ]; then
+        rm $hook
+    fi
+done
+
+popd > /dev/null
+

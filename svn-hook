@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #   [1] REPOS-PATH   (the path to this repository)
 #   [2]
