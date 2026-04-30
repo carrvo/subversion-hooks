@@ -59,6 +59,7 @@ for hook in $0.d/*; do
     # Execute the file (the ./ is optional if the directory is in your PATH)
     "$hook" "$1" "$2" "$3" "$4" "$5" <<< "$STD_IN" #*>> $LOG
     LAST_EXIT_CODE=$?
+    echo "$LAST_EXIT_CODE $hook" 1>&2
     if [ $LAST_EXIT_CODE != 0 ];
     then
 	    exit $LAST_EXIT_CODE;
