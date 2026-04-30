@@ -40,7 +40,6 @@
 # For similar reasons, you should also add a trailing @ to URLs which
 # are passed to SVN commands accepting URLs with peg revisions.
 
-
 LOG="/tmp/svn-hooks.log"
 REPOS="$1"
 ARG2="$2"
@@ -54,11 +53,11 @@ STD_IN=$(cat)
 
 echo "$0 - $REPOS " $(date) 1>&2
 
-for file in "$REPOS"/hooks/$0.d/*; do
+for hook in $0.d/*; do
   # Check if the item is a regular file AND has executable permission
-  if [[ -f "$file" ]] && [[ -x "$file" ]]; then
+  if [[ -f "$hook" ]] && [[ -x "$hook" ]]; then
     # Execute the file (the ./ is optional if the directory is in your PATH)
-    "$REPOS"/hooks/$0.d/"$file" "$1" "$2" "$3" "$4" "$5" <<< "$STD_IN"
+    "$hook" "$1" "$2" "$3" "$4" "$5" <<< "$STD_IN" #*>> $LOG
     LAST_EXIT_CODE=$?
     if [ $LAST_EXIT_CODE != 0 ];
     then
