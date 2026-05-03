@@ -46,7 +46,10 @@ ARG2="$2"
 ARG3="$3"
 ARG4="$4"
 ARG5="$5"
-STD_IN=$(cat)
+if [ ! -t 0 ];
+then
+  STD_IN=$(</dev/stdin)
+fi
 
 # Exit on all errors.
 #set -e
