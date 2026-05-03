@@ -46,7 +46,10 @@ ARG2="$2"
 ARG3="$3"
 ARG4="$4"
 ARG5="$5"
-STD_IN=$(cat)
+if [ ! -t 0 ];
+then
+  STD_IN=$(</dev/stdin)
+fi
 
 # Exit on all errors.
 #set -e
@@ -59,6 +62,7 @@ for hook in $0.d/*; do
     # Execute the file (the ./ is optional if the directory is in your PATH)
     "$hook" "$1" "$2" "$3" "$4" "$5" <<< "$STD_IN" #*>> $LOG
     LAST_EXIT_CODE=$?
+    echo "$LAST_EXIT_CODE $hook" 1>&2
     if [ $LAST_EXIT_CODE != 0 ];
     then
 	    exit $LAST_EXIT_CODE;
