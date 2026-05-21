@@ -1,3 +1,4 @@
 add-subversion-hooks /usr/bin/
 remove-subversion-hooks /usr/bin/
 svn-hook /usr/src/subversion-hooks/
+subversion-hooks /etc/logrotate.d/
