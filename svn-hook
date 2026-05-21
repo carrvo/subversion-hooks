@@ -40,6 +40,7 @@
 # For similar reasons, you should also add a trailing @ to URLs which
 # are passed to SVN commands accepting URLs with peg revisions.
 
+LOG="/tmp/svn-hooks.log"
 REPOS="$1"
 ARG2="$2"
 ARG3="$3"
@@ -59,7 +60,7 @@ for hook in $0.d/*; do
   # Check if the item is a regular file AND has executable permission
   if [[ -f "$hook" ]] && [[ -x "$hook" ]]; then
     # Execute the file (the ./ is optional if the directory is in your PATH)
-    /usr/bin/systemd-cat "$hook" "$1" "$2" "$3" "$4" "$5" <<< "$STD_IN"
+    "$hook" "$1" "$2" "$3" "$4" "$5" <<< "$STD_IN" #*>> $LOG
     LAST_EXIT_CODE=$?
     echo "$LAST_EXIT_CODE $hook" 1>&2
     if [ $LAST_EXIT_CODE != 0 ];

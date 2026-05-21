@@ -10,6 +10,6 @@ Vcs-Git: https://github.com/carrvo/subversion-hooks
 
 Package: subversion-hooks
 Architecture: all
-Depends: ${misc:Depends}, subversion, bash (>= 5.2.21), systemd (>= 255.4)
+Depends: ${misc:Depends}, subversion, bash (>= 5.2.21)
 Homepage: https://github.com/carrvo/subversion-hooks
 Description: Allows subversion to call multiple hooks!
