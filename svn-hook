@@ -40,7 +40,7 @@
 # For similar reasons, you should also add a trailing @ to URLs which
 # are passed to SVN commands accepting URLs with peg revisions.
 
-LOG="/var/log/subversion-hooks/$0.log"
+LOG="/var/log/subversion-hooks/$(basename $0).log"
 REPOS="$1"
 ARG2="$2"
 ARG3="$3"
