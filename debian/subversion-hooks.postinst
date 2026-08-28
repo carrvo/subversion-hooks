@@ -1,0 +1,23 @@
+#!/bin/sh
+set -e
+
+#DEBHELPER#
+
+# SelfAuth
+if [ ! -d /var/log/subversion-hooks/ ];
+then
+    mkdir /var/log/subversion-hooks
+fi
+chgrp www-data /var/log/subversion-hooks/
+chmod g+rwx /var/log/subversion-hooks/
+
+for hook in start-commit pre-commit post-commit pre-revprop-change post-revprop-change pre-lock post-lock pre-unlock post-unlock; do
+    if [ ! -f /var/log/subversion-hooks/$hook.log ];
+    then
+        touch /var/lib/selfauth/$hook.log
+    fi
+    chgrp www-data /var/log/subversion-hooks/$hook.log
+    chmod g+rw /var/log/subversion-hooks/$hook.log
+done
+
+exit 0
