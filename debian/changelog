@@ -1,3 +1,9 @@
+subversion-hooks (0.0.6) unstable; urgency=medium
+
+  * Fix log permissions with respect to logrotate
+
+ -- carrvo <carrvo@gmail.com>  Wed, 02 Sep 2026 11:37:23 -0600
+
 subversion-hooks (0.0.5) unstable; urgency=medium
 
   * Fix log permissions 
