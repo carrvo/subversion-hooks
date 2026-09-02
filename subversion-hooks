@@ -5,5 +5,5 @@
 	compress
 	delaycompress
 	notifempty
-	create 640 root adm
+	create 240 www-data adm
 }
